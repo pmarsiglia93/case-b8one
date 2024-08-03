@@ -1,66 +1,123 @@
 /* src/ProductCard.css */
-.product-card {
+body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .product-card {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
-    width: 240px;
-    /* Ajuste de largura para o card */
-    text-align: center;
+    width: 240px; /* Ajuste de largura para o card */
+    position: relative;
     transition: transform 0.3s;
-}
-
-.product-card.hovered {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .product-card.hovered {
     transform: scale(1.05);
-}
-
-.product-card img {
+  }
+  
+  .product-card img {
     max-width: 100%;
     border-radius: 10px;
-}
-
-.product-card button {
+  }
+  
+  .product-name {
+    font-size: 16px;
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .old-price,
+  .current-price,
+  .installments {
+    font-size: 14px;
+    color: #555;
+    margin: 0px 0; /* Ajuste de margem para reduzir o espaço entre os elementos */
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .old-price {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .current-price {
+    font-size: 20px;
+    color: #e60000;
+  }
+  
+  .product-card button {
     margin-top: 10px;
     padding: 12px 24px;
     border: none;
-    border-radius: 5px 0px 0px 0px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, opacity 0.3s;
+    transition: background-color 0.3s, color 0.3s;
     gap: 10px;
-}
-
-.cart-button {
-    background-color: #007bff;
-    color: white;
     width: 240px;
     height: 48px;
-    /* Definido conforme o requisito */
-}
-
-.cart-button.in-cart {
-    background-color: #28a745;
-}
-
-.cart-button:hover {
-    background-color: #0056b3;
-}
-
-.wishlist-button {
-    background-color: #ffc107;
-    color: white;
-    margin-top: 10px;
-    width: 240px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .cart-button {
+    background-color: #40b25c;
+    color: #ffffff;
+    opacity: 1; /* Sempre visível */
+  }
+  
+  .cart-button:hover {
+    background-color: #40b25c;
+    color: #ffffff;
+  }
+  
+  .cart-button:active {
+    background-color: #1c6c3e;
+    color: #ffffff;
+  }
+  
+  .cart-button.in-cart {
+    background-color: #aef9b9;
+    color: #1c1c1c;
+  }
+  
+  .cart-button.in-cart::before {
+    content: '';
+    background-image: url('./images/check.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+  }
+  
+  .wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 48px;
     height: 48px;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px 0px 0px 0px;
+    background-size: cover;
     cursor: pointer;
-    transition: background-color 0.3s, opacity 0.3s;
-}
-
-.wishlist-button.in-wishlist {
-    background-color: #dc3545;
-}
-
-.wishlist-button:hover {
-    background-color: #e0a800;
-}
+  }
+  
+  .wishlist-default {
+    background-image: url('./images/wishlist-default.svg');
+  }
+  
+  .wishlist-hover {
+    background-image: url('./images/wishlist-hover.svg');
+  }
+  
+  .wishlist-clicked {
+    background-image: url('./images/wishlist-clicked.svg');
+  }
+  
+  .wishlist-active {
+    background-image: url('./images/wishlist-active.svg');
+  }
+  
