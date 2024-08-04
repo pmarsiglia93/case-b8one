@@ -1,36 +1,32 @@
 // src/ProductCard.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductCard.css';
 
 const ProductCard = ({ product, onAddToCart, onToggleWishlist }) => {
-  const [hovered, setHovered] = useState(false);
   const [wishlistState, setWishlistState] = useState('wishlist-default');
 
+  useEffect(() => {
+    setWishlistState(product.inWishlist ? 'wishlist-active' : 'wishlist-default');
+  }, [product.inWishlist]);
+
   const handleWishlistClick = () => {
-    const newState = product.inWishlist ? 'wishlist-default' : 'wishlist-clicked';
-    setWishlistState(newState);
     onToggleWishlist(product.id);
+    setWishlistState(product.inWishlist ? 'wishlist-default' : 'wishlist-clicked');
   };
 
   const handleMouseEnter = () => {
-    setHovered(true);
     if (!product.inWishlist) {
       setWishlistState('wishlist-hover');
     }
   };
 
   const handleMouseLeave = () => {
-    setHovered(false);
-    if (!product.inWishlist) {
-      setWishlistState('wishlist-default');
-    } else {
-      setWishlistState('wishlist-active');
-    }
+    setWishlistState(product.inWishlist ? 'wishlist-active' : 'wishlist-default');
   };
 
   return (
     <div
-      className={`product-card ${hovered ? 'hovered' : ''}`}
+      className="product-card"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

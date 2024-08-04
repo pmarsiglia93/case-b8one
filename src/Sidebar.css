@@ -1,0 +1,58 @@
+/* src/Sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* Mudar para -100% para garantir que a sidebar esteja completamente oculta */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.sidebar h2 {
+    margin-top: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sidebar ul li img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.sidebar ul li button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    margin-left: auto;
+}
