@@ -29,25 +29,27 @@ const ProductCard = ({ product, onAddToCart, onToggleWishlist }) => {
   };
 
   return (
-    <div 
-      className={`product-card ${hovered ? 'hovered' : ''}`} 
-      onMouseEnter={handleMouseEnter} 
+    <div
+      className={`product-card ${hovered ? 'hovered' : ''}`}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <img src={product.image} alt={product.name} />
-      <div 
-        className={`wishlist-icon ${wishlistState}`} 
+      <div
+        className={`wishlist-icon ${wishlistState}`}
         onClick={handleWishlistClick}
       ></div>
       <h2 className="product-name">{product.name}</h2>
       <p className="old-price">R$ {product.oldPrice.toFixed(2)}</p>
       <p className="current-price">R$ {product.price.toFixed(2)}</p>
-      <p className="installments">{product.installments}</p>
-      <button 
-        className={`cart-button ${product.inCart ? 'in-cart' : ''}`} 
+      <p className="installments">
+        em até <span className="installments-bold">10x de R$ 259,90</span> sem juros
+      </p>
+      <button
+        className={`cart-button ${product.inCart ? 'in-cart' : ''}`}
         onClick={() => onAddToCart(product.id)}
       >
-        {product.inCart ? 'Adicionado' : 'Adicionar'}
+        {product.inCart ? 'ADICIONADO' : 'ADICIONAR'}
       </button>
     </div>
   );
