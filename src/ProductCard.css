@@ -1,4 +1,3 @@
-/* src/ProductCard.css */
 body {
   font-family: 'Inter', sans-serif;
 }
@@ -27,7 +26,6 @@ body {
 .product-name {
   font-size: 14px;
   margin: 10px 0 24px 0;
-  /* Adiciona espaçamento de 24px abaixo do título do produto */
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 }

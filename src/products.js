@@ -1,4 +1,3 @@
-// src/products.js
 import monitorImage from './images/monitor.png';
 
 const products = [

@@ -1,9 +1,7 @@
-/* src/Sidebar.css */
 .sidebar {
     position: fixed;
     top: 0;
     right: -100%;
-    /* Mudar para -100% para garantir que a sidebar esteja completamente oculta */
     width: 300px;
     height: 100%;
     background-color: white;
